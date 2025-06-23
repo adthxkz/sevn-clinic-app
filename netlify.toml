@@ -1,0 +1,15 @@
+# Файл: netlify.toml
+
+[build]
+  # Команда, которую Netlify выполнит для сборки.
+  # Сначала он установит Flutter, потом соберет проект.
+  command = "flutter build web --release"
+  # Папка, которую нужно опубликовать после сборки.
+  publish = "build/web"
+
+[build.environment]
+  # Указываем версию Flutter (должна совпадать с вашим файлом .flutter-version)
+  FLUTTER_VERSION = "3.32.4"
+
+[functions]
+  directory = "functions"
