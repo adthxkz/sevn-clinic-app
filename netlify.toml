@@ -1,15 +1,28 @@
 # Файл: netlify.toml
 
+# Основные настройки сборки
 [build]
-  # Команда, которую Netlify выполнит для сборки.
-  # Сначала он установит Flutter, потом соберет проект.
-  command = "flutter build web --release"
-  # Папка, которую нужно опубликовать после сборки.
+  # Папка, которая будет опубликована после успешной сборки
   publish = "build/web"
+  # Команда, которую Netlify выполнит. Это целый скрипт.
+  command = """
+  # 1. Проверяем, есть ли кэш Flutter SDK, если нет - клонируем его с GitHub
+  if [ ! -d "/opt/build/cache/flutter" ] ; then
+    git clone https://github.com/flutter/flutter.git /opt/build/cache/flutter;
+  fi &&
 
-[build.environment]
-  # Указываем версию Flutter (должна совпадать с вашим файлом .flutter-version)
-  FLUTTER_VERSION = "3.32.4"
+  # 2. Переходим в папку с SDK и переключаемся на вашу версию
+  cd /opt/build/cache/flutter &&
+  git checkout 3.32.4 &&
+  cd /opt/build/repo &&
 
+  # 3. Добавляем Flutter в системный PATH и запускаем сборку
+  export PATH="/opt/build/cache/flutter/bin:$PATH" &&
+  flutter --version &&
+  flutter pub get &&
+  flutter build web --release
+  """
+
+# Настройки для серверных функций (можно оставить для будущего)
 [functions]
   directory = "functions"
