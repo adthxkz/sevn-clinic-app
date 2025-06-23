@@ -1,0 +1,14 @@
+# Flutter/Dart
+.dart_tool/
+.idea/
+.packages
+.pub-cache/
+.pub/
+build/
+
+# Files
+*.lock
+*.log
+
+# Mac
+.DS_Store
