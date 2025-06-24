@@ -10,7 +10,6 @@ class GlobalCartIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Consumer "слушает" изменения в CartService и перерисовывает только то, что внутри builder.
     return Consumer<CartService>(
       builder: (context, cartService, child) {
         return InkWell(

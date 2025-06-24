@@ -20,7 +20,6 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   final CartService _cartService = CartService();
 
-  // Подписываемся на изменения в корзине, чтобы обновлять UI
   @override
   void initState() {
     super.initState();
@@ -33,7 +32,6 @@ class _MainScreenState extends State<MainScreen> {
     super.dispose();
   }
 
-  // Эта функция вызывает перерисовку экрана при изменении корзины
   void _onCartChanged() {
     setState(() {});
   }
@@ -57,10 +55,9 @@ class _MainScreenState extends State<MainScreen> {
     final itemCount = _cartService.totalItems;
 
     return Stack(
-      clipBehavior: Clip.none, // Позволяет бейджу выходить за границы иконки
+      clipBehavior: Clip.none,
       children: [
         const Icon(Icons.shopping_cart_outlined),
-        // Показываем красный кружок, только если в корзине что-то есть
         if (itemCount > 0)
           Positioned(
             right: -5,
@@ -100,7 +97,6 @@ class _MainScreenState extends State<MainScreen> {
           const BottomNavigationBarItem(icon: Icon(Icons.calendar_today_outlined), activeIcon: Icon(Icons.calendar_today), label: 'Услуги'),
           const BottomNavigationBarItem(icon: Icon(Icons.shopping_bag_outlined), activeIcon: Icon(Icons.shopping_bag), label: 'Магазин'),
           const BottomNavigationBarItem(icon: Icon(Icons.list_alt_outlined), activeIcon: Icon(Icons.list_alt), label: 'Мои записи'),
-          // --- ИЗМЕНЕНИЕ ЗДЕСЬ: Используем наш новый виджет для иконки ---
           BottomNavigationBarItem(
             icon: _buildCartIcon(),
             label: 'Корзина',

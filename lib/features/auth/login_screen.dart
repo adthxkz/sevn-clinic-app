@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sevn_clinic_app/api/mock_api.dart';
 import 'package:sevn_clinic_app/main_screen.dart';
 import 'package:sevn_clinic_app/features/auth/registration_screen.dart';
+import 'package:sevn_clinic_app/config/app_config.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -53,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Вход в S.E.V.N. Clinic'),
+        title: const Text('Вход в ${AppConfig.clinicName}'),
         centerTitle: true,
       ),
       body: Padding(

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "152535815816",
+    "project_id": "sevn-clinic-app",
+    "storage_bucket": "sevn-clinic-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:152535815816:android:dbc3be8303c878f8b9b13d",
+        "android_client_info": {
+          "package_name": "com.example.sevn_clinic_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDA_nlbDPm4Y0fJOjg1SiziSFTnJvZkOLY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

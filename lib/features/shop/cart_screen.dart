@@ -117,7 +117,7 @@ class _CartScreenState extends State<CartScreen> {
       padding: const EdgeInsets.all(16.0),
       decoration: BoxDecoration(
         color: Colors.white,
-        boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10)],
+        boxShadow: [BoxShadow(color: Colors.deepPurple.shade200, blurRadius: 10)],
       ),
       child: Column(
         children: [

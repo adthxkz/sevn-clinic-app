@@ -16,13 +16,13 @@ class ServicesScreen extends StatefulWidget {
 
 class _ServicesScreenState extends State<ServicesScreen> {
   final CartService _cartService = CartService();
-  // Теперь мы загружаем и услуги, и профиль, чтобы сравнить их
+
   late Future<List<dynamic>> _dataFuture;
 
   @override
   void initState() {
     super.initState();
-    // Загружаем все данные одним запросом
+    
     _dataFuture = Future.wait([
       MockApi().getServices(),
       MockApi().getProfileData(),
