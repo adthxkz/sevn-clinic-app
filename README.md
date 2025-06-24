@@ -1,4 +1,4 @@
-# sevn_clinic_app
+# clinic_app
 
 A new Flutter project.
 
